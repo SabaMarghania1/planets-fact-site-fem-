@@ -89,6 +89,7 @@ text-transform: uppercase;
     letter-spacing: 1.929px;
     display:block;
     padding-bottom:20px;
+    /* background-color: transparent !important; */
 
 }
 
@@ -163,9 +164,15 @@ font-size: 8px;
 
 
 @media screen and (min-width:768px){
+.main-img{
+    margin:0 auto;
+}
+
     .header{
         display:block;
         text-align: center;
+        padding: 32px 53px 27px;
+        
     }
 
     .logo{
@@ -173,6 +180,64 @@ font-size: 8px;
         margin-bottom: 20px;
     }
 
-    
+    .planet__container{
+        grid-template-columns: auto auto;
+        grid-template-rows:auto auto;
+        grid-template-areas:
+        "image image"
+        "information header";
+        padding:40px;
+        padding-bottom:0;
+        justify-items: start;
+    }
+
+
+    .tabs{
+        flex-direction: column;
+        width:281px;
+        border:none;
+        background-color: none;
+        padding:0;
+        gap:23px;
+        margin-top:110px;
+        margin-left:-200px;
+
+        
+    }
+
+.text-info{
+    padding:0;
+    text-align: start;
+
+ }
+
+ .text-info h1{
+    margin-bottom: 24px;
+    font-size: 48px;
+ }
+ .text-info p{
+    text-align: start;
+    max-width:339px;
+    margin-bottom: 32px;
+ }
+
+    .tab{
+        padding: 18px 16px;
+        border:1px solid rgba(255,255,255,0.2) !important;
+        
+    }
+
+    .info-list{
+        flex-direction: row;
+        padding:0;
+        
+    }
+
+    .info-list__item{
+        flex-direction: column;
+        gap:10px;
+        justify-content: flex-start;
+        width:135px;
+    }
 }
     
