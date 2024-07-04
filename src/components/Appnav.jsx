@@ -25,7 +25,7 @@ const AppNav = ({planets}) => {
       <div className={`app-nav__menu ${isOpen ? 'open' : ''}`}>
         {planets.map(planet=>  <PlanetNav key={planet.name} colors={colors} planet={planet} toggleMenu={toggleMenu} />)}
       </div>
-      <div className="app-nav__hamburger" onClick={toggleMenu}>
+      <div className={`app-nav__hamburger ${isOpen && "disabled"}`}   onClick={toggleMenu}>
         <div className="app-nav__bar"></div>
         <div className="app-nav__bar"></div>
         <div className="app-nav__bar"></div>

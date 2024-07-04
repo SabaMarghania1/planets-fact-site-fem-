@@ -12,6 +12,7 @@
 body{
     height:100vh;
     background-color: #070724;
+    color: #fff;
 }
 
 #root{
@@ -43,6 +44,10 @@ letter-spacing: -1.05px;
 text-transform: uppercase;
 }
 
+
+.disabled{
+    opacity:0.287
+}
 
 
 @media screen and (min-width:768px){
