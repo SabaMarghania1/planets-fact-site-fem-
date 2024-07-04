@@ -1,22 +1,54 @@
-import { useState } from "react"
+import { useState } from "react";
+import TextInfo from "./TextInfo";
 
-export default function Content({planet}) {
-const [tabs,setTabs] = useState("overview")
-console.log(planet)
-console.log(planet.images.planet);
+export default function Content({ planet }) {
+  const [tab, setTab] = useState("overview");
 
+  const colors = {
+    Mercury: "#DEF4FC",
+    Venus: "#F7CC7F",
+    Earth: "#545BFE",
+    Mars: "#FF6A45",
+    Jupiter: "#ECAD7A",
+    Saturn: "#FCCB6B",
+    Uranus: "#65F0D5",
+    Neptune: "#497EFA"
+  };
 
-
-
+  const tabStyle = {
+    borderBottom: `3px solid ${colors[planet.name]}`,
+    cursor: "pointer"
+  };
 
   return (
     <main className="planet__container">
-        <div className="tabs">
-            <span className="tab">OVERVIEW</span>
-            <span className="tab">STRUCTURE</span>
-            <span className="tab">SURFACE</span>
-        </div>
-        <div className="image"><img  src={planet.images.planet} alt="" /></div>
+      <div className="tabs">
+        <span
+          className="tab"
+          style={tab === "overview" ? tabStyle : {}}
+          onClick={() => setTab("overview")}
+        >
+          OVERVIEW
+        </span>
+        <span
+          className="tab"
+          style={tab === "structure" ? tabStyle : {}}
+          onClick={() => setTab("structure")}
+        >
+          STRUCTURE
+        </span>
+        <span
+          className="tab"
+          style={tab === "geology" ? tabStyle : {}}
+          onClick={() => setTab("geology")}
+        >
+          SURFACE
+        </span>
+      </div>
+        <img src={planet.images.planet} alt={planet.name} />
+        {}
+        {}
+        <TextInfo planet={planet} tab={tab}/>
     </main>
-  )
+  );
 }

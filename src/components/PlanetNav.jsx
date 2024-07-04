@@ -8,7 +8,7 @@ const PlanetNav = ({ planet, colors ,toggleMenu }) => {
       <div className="planet-nav-item">
         <div className="nav__item-left">
         <div className='circle' style={{ backgroundColor: planetColor }}></div>
-        <span className='planet__nav-name'>{planet.name}</span>
+       <NavLink to={`/planets/${planet.name.toLowerCase()}`}><span className='planet__nav-name'>{planet.name}</span></NavLink> 
         </div>
         <div className="nav__item-right">
         <NavLink to={`/planets/${planet.name.toLowerCase()}`}>
