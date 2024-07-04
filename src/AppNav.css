@@ -1,0 +1,116 @@
+/* Mobile-first styles */
+.app-nav {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 1rem; */
+    background-color: transparent;
+    color: white;
+  }
+  
+
+  .app-nav__menu {
+    display: none;
+    flex-direction: column;
+    padding:44px 32px 67px 24px;
+    /* justify-content: space-between; */
+    gap:20px;
+    position: absolute;
+    top: 70.5px;
+    left:0;
+    height:100vh;
+    background-color: #070724;
+width:100%;
+    border-radius: 5px;
+  }
+  
+  .app-nav__menu.open {
+    display: flex;
+  }
+  
+  .app-nav__item {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .app-nav__hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap:7px;
+  }
+  
+  .app-nav__bar {
+    width: 24px;
+    height: 3px;
+    background-color: white;
+
+  }
+  .planet-nav-item{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(255,255,255, 0.1);
+    align-items:center;
+  }
+
+  .planet-nav-item:last-child{
+    border:none;
+    padding-bottom:0;
+  }
+
+.nav__item-left{
+    display:flex;
+    align-items: flex-start;
+    gap:25px;
+}
+
+  .planet__nav-name{
+color: #FFF;
+font-family: Spartan;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 25px; /* 166.667% */
+letter-spacing: 1.364px;
+text-transform: uppercase;
+  }
+
+  .circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;;
+  }
+  
+  /* Tablet and desktop styles */
+  @media (min-width: 768px) {
+ 
+    .app-nav__menu {
+      display: flex;
+      flex-direction: row;
+      position: static;
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+    }
+  
+    .app-nav__hamburger {
+      display: none;
+    }
+
+    .nav__item-right{
+        display:none;
+    }
+
+    .circle{
+        display:none;
+    }
+
+    .planet-nav-item{
+        align-items: flex-start;
+    }
+  }
+  
