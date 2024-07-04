@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TextInfo from "./TextInfo";
-
+import Tabs from "./Tabs";
+import AdditionalImage from "./AdditionalImage";
 export default function Content({ planet }) {
   const [tab, setTab] = useState("overview");
 
@@ -15,39 +16,13 @@ export default function Content({ planet }) {
     Neptune: "#497EFA"
   };
 
-  const tabStyle = {
-    borderBottom: `3px solid ${colors[planet.name]}`,
-    cursor: "pointer"
-  };
 
   return (
     <main className="planet__container">
-      <div className="tabs">
-        <span
-          className="tab"
-          style={tab === "overview" ? tabStyle : {}}
-          onClick={() => setTab("overview")}
-        >
-          OVERVIEW
-        </span>
-        <span
-          className="tab"
-          style={tab === "structure" ? tabStyle : {}}
-          onClick={() => setTab("structure")}
-        >
-          STRUCTURE
-        </span>
-        <span
-          className="tab"
-          style={tab === "geology" ? tabStyle : {}}
-          onClick={() => setTab("geology")}
-        >
-          SURFACE
-        </span>
-      </div>
-        <img src={planet.images.planet} alt={planet.name} />
-        {}
-        {}
+      <Tabs tab={tab} setTab={setTab} colors ={colors} planet={planet}/>
+
+        <img className="main-img" src={tab === "structure" ? planet.images.internal : planet.images.planet } alt={planet.name} />
+        <AdditionalImage planet = {planet} tab={tab}/>
         <TextInfo planet={planet} tab={tab}/>
     </main>
   );

@@ -87,9 +87,10 @@ text-transform: uppercase;
 
 }
 
- img{
-grid-area:image;
-width:50%;
+ .main-img{
+
+    grid-area:image;
+    width:50%;
 }
 
 .text-info{
@@ -119,6 +120,13 @@ margin-bottom: 10px;
 .text-info a{
     text-decoration: underline;
     opacity:0.5
+}
+
+.geology-image{
+    position:absolute;
+    width: 50px;
+    top:200px;
+    
 }
 
 @media screen and (min-width:768px){
